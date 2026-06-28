@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexa ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f1b2d;
+color:white;
+overflow:hidden;
+}
+
+.page{
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+text-align:center;
+}
+
+.active{
+display:flex;
+}
+
+h1{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.script{
+font-family:cursive;
+font-size:50px;
+}
+
+.btn{
+margin-top:25px;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:#f7d991;
+font-size:18px;
+cursor:pointer;
+}
+
+.heart{
+font-size:180px;
+color:#c8e8ff;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+50%{transform:scale(1.08);}
+}
+
+.polaroid{
+background:white;
+padding:10px;
+border-radius:8px;
+width:280px;
+box-shadow:0 0 20px rgba(0,0,0,.5);
+margin:20px 0;
+}
+
+.polaroid img{
+width:100%;
+border-radius:5px;
+}
+
+.textbox{
+background:rgba(0,0,0,.35);
+padding:18px;
+border-radius:15px;
+max-width:400px;
+line-height:1.6;
+}
+
+.petal{
+position:fixed;
+top:-10px;
+color:white;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+}
+</style>
+</head>
+<body>
+
+<div class="page active" id="p1">
+<div class="heart">♡</div>
+<h1 class="script">Alexa</h1>
+<button class="btn" onclick="nextPage()">Ketuk Untuk Membuka</button>
+</div>
+
+<div class="page" id="p2">
+<p>BINTANG MALAM INI</p>
+<h1 class="script">Alexa</h1>
+<br>
+<p>sayangg, aku cuma mau bahas satu foto kamu.<br>
+foto yang sederhana, tapi entah kenapa<br>
+selalu berhasil bikin aku senyum sendiri.</p>
+<button class="btn" onclick="nextPage()">Mulai Ceritanya</button>
+</div>
+
+<div class="page" id="p3">
+<p>BABAK 1/3</p>
+<h2>senyum yang bikin candu</h2>
+
+<div class="polaroid">
+<img src="foto.jpg">
+</div>
+
+<div class="textbox">
+Setiap kali aku lihat senyum kamu,
+rasanya dunia mendadak jadi lebih tenang.
+Bukan karena sempurna,
+tapi karena senyum itu selalu berhasil
+bikin aku nyaman.
+</div>
+
+<button class="btn" onclick="nextPage()">Lanjut</button>
+</div>
+
+<div class="page" id="p4">
+<p>BABAK 2/3</p>
+<h2>mata yang berbicara</h2>
+
+<div class="polaroid">
+<img src="foto.jpg">
+</div>
+
+<div class="textbox">
+Ada sesuatu di mata kamu
+yang nggak bisa dijelaskan dengan kata-kata.
+Tatapan yang sederhana,
+tapi cukup buat bikin aku berhenti
+dan memperhatikan lebih lama.
+</div>
+
+<button class="btn" onclick="nextPage()">Lanjut</button>
+</div>
+
+<div class="page" id="p5">
+<p>BABAK 3/3</p>
+<h2>lebih terang dari bintang</h2>
+
+<div class="polaroid">
+<img src="foto.jpg">
+</div>
+
+<div class="textbox">
+Kalau bintang menerangi langit malam,
+senyum dan tatapan kamu menerangi hariku.
+Dan jujur saja,
+aku masih belum bosan mengagumi foto ini.
+</div>
+
+<button class="btn" onclick="nextPage()">Penutup</button>
+</div>
+
+<div class="page" id="p6">
+<h1 class="script">Alexa</h1>
+
+<div class="textbox">
+Mungkin ini cuma satu foto biasa.<br><br>
+
+Tapi buat aku,
+foto ini menyimpan banyak alasan
+kenapa aku selalu senang melihatmu.<br><br>
+
+Terima kasih sudah hadir
+dan membuat dunia terasa sedikit lebih indah.<br><br>
+
+❤️ Untuk sayaaangkuu yang paling cantiikk ❤️
+</div>
+</div>
+
+<script>
+let current=1;
+
+function nextPage(){
+document.getElementById("p"+current).classList.remove("active");
+current++;
+document.getElementById("p"+current).classList.add("active");
+}
+
+for(let i=0;i<25;i++){
+let p=document.createElement("div");
+p.className="petal";
+p.innerHTML="❀";
+p.style.left=Math.random()*100+"vw";
+p.style.animationDuration=(5+Math.random()*8)+"s";
+document.body.appendChild(p);
+}
+</script>
+
+</body>
+</html>
